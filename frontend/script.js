@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:3000/games') // Substitua pelo seu IP real
+    fetch('http://localhost:3000/games')
         .then(response => response.json())
         .then(data => {
             const list = document.getElementById('games-list');
