@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("search"); // Certifique-se de que o campo de busca tem este ID
+    const searchInput = document.getElementById("search");
 
     searchInput.addEventListener("input", function () {
         const filterValue = searchInput.value.trim().toLowerCase();
