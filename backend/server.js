@@ -9,8 +9,8 @@ const dbConfig = {
     user: 'Impacta',
     password: 'zaq1xsw2***',
     server: 'DESKTOP-DACG012',
-    database: 'ImpactaProject', // Nome sem espaço
-    port: 1433, // Adicionando a porta correta
+    database: 'ImpactaProject', 
+    port: 1433,
     options: {
         encrypt: false,  
         trustServerCertificate: true,
