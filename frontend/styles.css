@@ -182,3 +182,93 @@ h1 {
     font-weight: bold;
 }
 
+/* Tablets e abaixo (máx. 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    #search {
+        width: 90%;
+    }
+
+    #games-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .game {
+        flex: 0 1 calc(50% - 20px); /* 2 por linha com espaçamento */
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    .game img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain; /* mostra a imagem inteira sem cortar */
+        border-radius: 5px;
+    }
+
+    .game h3 {
+        font-size: 15px;
+    }
+
+    .game p {
+        font-size: 13px;
+    }
+
+    #pagination button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* Smartphones pequenos (máx. 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    #search {
+        width: 95%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #games-list {
+        gap: 10px;
+    }
+
+    .game {
+        width: 30%;
+        padding: 10px;
+    }
+
+    .game img {
+        max-height: 140px;
+        border-radius: 5px;
+    }
+
+    .game h3 {
+        font-size: 13px;
+    }
+
+    .game p {
+        font-size: 12px;
+    }
+
+    #pagination {
+        gap: 5px;
+    }
+
+    #pagination button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
