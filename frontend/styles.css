@@ -1,12 +1,13 @@
-body { 
-    font-family: Arial, sans-serif; 
+body {
+    font-family: 'Roboto', sans-serif;
     background: url('https://img.freepik.com/vetores-gratis/fundo-hexagonal-gradiente_23-2148954968.jpg?t=st=1741465984~exp=1741469584~hmac=ba851fbb738f8c54c4830cdabb5e8e5d1729f2cbc8160fd5ad46a91254d0a0cf&w=1060') no-repeat center center fixed;
     background-size: cover;
-    color: white; 
+    color: white;
     text-align: center;
     margin: 0;
     padding: 0;
     position: relative;
+    z-index: 0;
 }
 
 .overlay {
@@ -15,70 +16,169 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
 }
 
-h1 { 
-    font-size: 70px;
-    font-family: 'UnifrakturMaguntia', cursive;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    margin-top: 30px;
+    color: #fff;
     text-transform: uppercase;
-    color: white;
-    text-shadow: 
-        -4px -4px 0 #000,  
-         4px -4px 0 #000,
-        -4px  4px 0 #000,
-         4px  4px 0 #000,
-         0px  0px 20px purple;
+    letter-spacing: 6px;
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #8a2be2,
+        2px 2px 0 #000,
+        -2px -2px 0 #000;
+    position: relative;
+    z-index: 1;
 }
 
 
-#search { 
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px; 
-    width: 80%;
+
+#search {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    width: 60%;
+    max-width: 600px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
 }
 
-#games-list { 
-    display: flex; 
-    flex-wrap: wrap; 
+#games-list {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Espaço entre os cards */
+    gap: 15px;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-.game { 
-    border: 1px solid white; 
-    padding: 15px; 
-    margin: 10px; 
-    width: 220px; 
+.game {
+    border: none;
+    padding: 20px;
+    margin: 10px;
+    width: 220px;
     text-align: center;
-    background: #1e1e1e;
-    border-radius: 10px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
 }
 
-.game img { 
-    width: 100%; 
+.game img {
+    width: 100%;
     height: auto;
     max-height: 250px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.game h3, .game p {
+.game h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e0e0e0;
     margin: 5px 0;
 }
+
+.game p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    .game {
+        width: 90%;
+    }
+
+    #search {
+        width: 90%;
+    }
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+    font-size: 18px;
+    color: white;
+}
+
+#pagination button {
+    padding: 10px 20px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#pagination button:hover:not(:disabled) {
+    background-color: #b84dff;
+}
+
+#pagination button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+#pagination button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#pagination button:hover {
+    background-color: #b84dff;
+}
+
+#pagination button.active {
+    background-color: #ff00ff;
+    font-weight: bold;
+}
+
