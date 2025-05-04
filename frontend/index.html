@@ -6,15 +6,36 @@
     <title>Catálogo de Jogos</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
     <div class="overlay"></div>
-    <h1>Games Shop</h1>
+    <h1>GAMES SHOP</h1>
+
+    <!-- Autenticação -->
+    <div id="auth-container">
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Login</button>
+        <button onclick="register()">Registrar</button>
+        <p id="auth-status"></p>
+    </div>
+
+    <!-- Área do usuário -->
+    <p id="welcome-user"></p>
+    <div class="user-controls">
+        <button id="show-favorites" onclick="showFavorites()" style="display:none;">👾 Meus Favoritos</button>
+        <button id="back-home" onclick="goHome()" style="display:none;">🏠 Início</button>
+        <button id="logout-btn" onclick="logout()" style="display:none;">🚪 Sair</button>
+    </div>
+    
+
+    <!-- Filtro -->
     <input type="text" id="search" placeholder="🔍 Filtrar por título, gênero ou ano">
+
+    <!-- Jogos -->
     <div id="games-list"></div>
     <div id="pagination"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
